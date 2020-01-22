@@ -5,7 +5,7 @@ import {
     Route
 } from 'react-router-dom';
 
-import { Home } from './Components';
+import { Home, UserDetails } from './Components';
 
 export const Routes = () => {
     return (
@@ -15,7 +15,7 @@ export const Routes = () => {
                     <h1>Add User</h1>
                 </Route>
                 <Route path="/:id">
-                    <h1>user ID</h1>
+                    <UserDetails />
                 </Route>
                 <Route path="/">
                     <Home />
