@@ -1,27 +1,18 @@
 import React from 'react';
-import { UserDetailsContainer } from './UserDetailsContainer';
 import { UserDetailsScreen } from './UserDetailsScreen';
-import { ErrorBoundary } from '../ErrorBoundary';
-import { WrapperCommon } from '../WrapperCommon';
-import { ErrorMessage } from '../ErrorMessage';
+import { Title } from './Title';
+import { StyledWrapperInfo } from './UserDetailsScreen.styled';
+import UserImage from './UserImage';
+import UserDetailsInfo from './UserDetailsInfo';
 
 export const UserDetails = () => {
     return (
-        <React.Suspense fallback={<h3>Loading User Detail...</h3>}>
-            <UserDetailsContainer>
-                {({ user, error }) => (
-                    <>
-                        <WrapperCommon isVisible={error}>
-                            <ErrorMessage error={error} />
-                        </WrapperCommon>
-                        <WrapperCommon isVisible={!error}>
-                            <ErrorBoundary centerText>
-                                <UserDetailsScreen user={user} />
-                            </ErrorBoundary>
-                        </WrapperCommon>
-                    </>
-                )}
-            </UserDetailsContainer>
-        </React.Suspense>
+        <UserDetailsScreen>
+            <Title text="Details" />
+            <StyledWrapperInfo>
+                <UserImage />
+                <UserDetailsInfo />
+            </StyledWrapperInfo>
+        </UserDetailsScreen>
     )
 }

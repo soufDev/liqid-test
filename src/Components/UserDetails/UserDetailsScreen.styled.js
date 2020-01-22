@@ -16,7 +16,14 @@ export const StyledItemInfo = styled.div`
     border-bottom: 1px solid ${({ theme }) => theme.lightGray};
 `;
 
-export const StyledContainerInfo = styled.div`
+export const StyledWrapperInfo = styled.div`
     display: flex;
     flex-direction: column;
+`;
+
+export const StyledImg = styled.img`
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    align-self: center;
 `;
