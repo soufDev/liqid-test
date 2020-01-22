@@ -1,0 +1,18 @@
+import styled from 'styled-components';
+
+export const StyledWrapper = styled.div`
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+`;
+
+export const StyledUserItem = styled.div`
+    padding: 5px;
+    color: ${({ theme }) => theme.white};
+    background-color: ${({ theme }) => theme.blue};
+    border-bottom: 1px solid ${({ theme }) => theme.white};
+    &:hover {
+        background-color: ${({ theme }) => theme.lightBlue};
+        cursor: pointer;
+    }
+`;
