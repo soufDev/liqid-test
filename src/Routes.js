@@ -6,21 +6,26 @@ import {
 } from 'react-router-dom';
 
 import { Home, UserDetails } from './Components';
+import styled from 'styled-components';
+
+export const StyledWrapper = styled.div`
+    display: flex;
+`;
 
 export const Routes = () => {
     return (
-        <Router>
-            <Switch>
-                <Route path="/add">
-                    <h1>Add User</h1>
-                </Route>
-                <Route path="/:id">
-                    <UserDetails />
-                </Route>
-                <Route path="/">
-                    <Home />
-                </Route>
-            </Switch>
-        </Router>
+        <StyledWrapper>
+            <Router>
+                <Home />
+                <Switch>
+                    <Route path="/add">
+                        <h1>Add User</h1>
+                    </Route>
+                    <Route path="/:id">
+                        <UserDetails />
+                    </Route>
+                </Switch>
+            </Router>
+        </StyledWrapper>
     )
 }

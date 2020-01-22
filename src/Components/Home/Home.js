@@ -1,15 +1,17 @@
 import React from 'react';
-import { Users } from '../Users';
 import { HomeContainer } from './HomeContainer';
+import { WrapperCommon } from '../WrapperCommon';
+import { HomeScreen } from './HomeScreen';
 
 export const Home = () => {
     return (
         <React.Suspense fallback={<h3>Loading...</h3>}>
             <HomeContainer>
-                {({ users, error }) => {
-                    if (error) return <h3>Error Occurred: {error.message}</h3>
-                    return <Users nameUserList={users} />
-                }}
+                {({ users, error, isVisible }) => (
+                    <WrapperCommon isVisible={isVisible}>
+                        <HomeScreen users={users} error={error} />
+                    </WrapperCommon>
+                )}
             </HomeContainer>
         </React.Suspense>
     )
