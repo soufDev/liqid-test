@@ -1,1 +1,1 @@
-export { userMedia } from './useMedia';
+export { useMedia } from './useMedia';
