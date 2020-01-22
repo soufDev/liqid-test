@@ -17,10 +17,10 @@ export const UserDetailsInfo = ({ user }) => {
                 <strong>Email:</strong> {user.email}
             </StyledItemInfo>
             <StyledItemInfo>
-                <strong>Phone:</strong> {user.phone}
+                <strong>Phone:</strong> <a href={`tel:${user.phone}`}>{user.phone}</a>
             </StyledItemInfo>
             <StyledItemInfo>
-                <strong>website:</strong> {user.website}
+                <strong>website:</strong> <a href={user.website} target="_blank" rel="noopener noreferrer">{user.website}</a>
             </StyledItemInfo>
         </>
     )
