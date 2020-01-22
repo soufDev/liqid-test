@@ -1,0 +1,1 @@
+export { userMedia } from './useMedia';
