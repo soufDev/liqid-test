@@ -5,6 +5,8 @@ import {
     Route
 } from 'react-router-dom';
 
+import { Home } from './Components';
+
 export const Routes = () => {
     return (
         <Router>
@@ -16,7 +18,7 @@ export const Routes = () => {
                     <h1>user ID</h1>
                 </Route>
                 <Route path="/">
-                    <h1>HOME</h1>
+                    <Home />
                 </Route>
             </Switch>
         </Router>
