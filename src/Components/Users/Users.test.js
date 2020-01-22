@@ -69,7 +69,7 @@ const items = [
 ];
 
 test('should render without crashing', () => {
-    const { container } = render(<Users nameUserList={[]} />);
+    const { container } = render(<Users nameUserList={[]} onClick={mockOnClick} />);
     expect(container.firstChild).toBeInTheDocument()
 });
 
@@ -77,7 +77,7 @@ test('should render the right number of username-item', () => {
     
     const { getAllByTestId, queryAllByTestId, rerender } = render(<Users nameUserList={[]} onClick={mockOnClick} />);
     expect(queryAllByTestId('username-item').length).toBe(0);
-    rerender(<Users nameUserList={items} />);
+    rerender(<Users nameUserList={items} onClick={mockOnClick} />);
     expect(getAllByTestId('username-item').length).toBe(items.length); 
 })
 

@@ -11,7 +11,7 @@ export const UserDetails = () => {
                     if (error) return <h3>Error Occurs: {error.message}</h3>
                     return (
                         <ErrorBoundary centerText>
-                                <UserDetailsScreen user={user} />
+                            <UserDetailsScreen user={user} />
                         </ErrorBoundary>
                     )
                 }}
