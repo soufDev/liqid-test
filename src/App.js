@@ -6,7 +6,6 @@ import theme from './theme';
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <h1>LIQID TEST</h1>
       <Routes />
     </ThemeProvider>
   );
