@@ -18,9 +18,6 @@ export const Routes = () => {
             <Router>
                 <Home />
                 <Switch>
-                    <Route path="/add">
-                        <h1>Add User</h1>
-                    </Route>
                     <Route path="/:id">
                         <UserDetails />
                     </Route>

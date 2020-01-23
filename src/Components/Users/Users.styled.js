@@ -4,6 +4,9 @@ export const StyledWrapper = styled.div`
     width: 300px;
     display: flex;
     flex-direction: column;
+    @media (max-width: 414px) {
+        width: 100%;
+    }
 `;
 
 export const StyledUserItem = styled.div`
