@@ -5,6 +5,9 @@ export const StyledWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
+    @media (max-width: 414px) {
+        padding: 10px 0;
+    }
 `;
 
 export const StyledTitle = styled.h1`

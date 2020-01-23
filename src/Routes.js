@@ -1,28 +1,35 @@
 import React from 'react';
 import { 
     BrowserRouter as Router,
-    Switch,
     Route
 } from 'react-router-dom';
 
-import { Home, UserDetails } from './Components';
 import styled from 'styled-components';
 
 export const StyledWrapper = styled.div`
     display: flex;
 `;
 
+const Home = React.lazy(() => import('./Components/Home'));
+const UserDetails = React.lazy(() => import('./Components/UserDetails'));
+
+const AddUser = () => <h1>Add User</h1>;
+
+
 export const Routes = () => {
     return (
-        <StyledWrapper>
-            <Router>
-                <Home />
-                <Switch>
+        <React.Suspense fallback={<h1>LOADING APP ....</h1>}>
+            <StyledWrapper>
+                <Router>
+                    <Home />
+                    <Route exact path="/add">
+                        <AddUser />
+                    </Route>
                     <Route path="/:id">
                         <UserDetails />
                     </Route>
-                </Switch>
-            </Router>
-        </StyledWrapper>
+                </Router>
+            </StyledWrapper>
+        </React.Suspense>
     )
 }
