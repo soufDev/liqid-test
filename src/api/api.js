@@ -21,6 +21,11 @@ class ApiService {
     const response = await this.client.get(path, options);
     return response.data;
   }
+
+  async add(path, body, options) {
+    const response = await this.client.post(path, { data: body }, options);
+    return response.data;
+  }
 }
 
 export default new ApiService();
